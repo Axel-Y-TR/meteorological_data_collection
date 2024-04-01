@@ -133,6 +133,8 @@ It retrieves the current timestamp using datetime.now() to record the insertion 
 Constructs a dictionary data_w containing the collected weather data along with the city ID, name, coordinates, and insertion time.
 Inserts the weather data into the 'weather' collection.
 
+There is a 3 second time sleep to ensure that the api does not exceed 60 calls/minute.
+
 Success Message and Connection Closing:
 
 After data collection is complete, it prints a success message indicating the successful collection of data.
