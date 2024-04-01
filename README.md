@@ -138,7 +138,7 @@ Success Message and Connection Closing:
 After data collection is complete, it prints a success message indicating the successful collection of data.
 
 
-**__This could be a sticking point:__**
+**__This could be a sticking point‼️:__**
 
 - difficulty in understanding subscriptions and the associated endpoint. it's not the one call but the current data!
 
