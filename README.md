@@ -27,6 +27,7 @@ __2. Create the Docker image of the python script__
 In your shell, access the current directory of the python script
 
 Create the image from the dockerfile using this command in your shell:
+
 ```docker build -t get_data .```
 
 Check that the image has been created using this command:
