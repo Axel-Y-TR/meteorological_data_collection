@@ -26,7 +26,7 @@ def get(lat, lon, api_key):
         return None
 
 def get_data(lat, lon):
-    api_key = "74fba207e3c6e53a8e1b95c9457311a8" #current data subscribtion !
+    api_key = "API KEY" #current data subscribtion !
     weather_data = get(lat, lon, api_key)
     if weather_data:
          return weather_data
