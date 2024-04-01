@@ -31,7 +31,7 @@ Create the image from the dockerfile using this command in your shell:
 
 Check that the image has been created using this command:
 
-```docker images```
+ ```docker images```
 
 __3. Create the dockercompose__
 
