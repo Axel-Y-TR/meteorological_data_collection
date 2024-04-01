@@ -2,8 +2,8 @@ import requests
 import json
 import pymongo
 from pymongo import MongoClient
-from datetime import datetime 
-
+from datetime import datetime
+import time
 
 client = MongoClient('mongodb', 27017)
 db = client['DB']
@@ -26,22 +26,17 @@ def get(lat, lon, api_key):
         return None
 
 def get_data(lat, lon):
-    api_key = "API KEY" #current data subscribtion !
+    api_key = "API KEY" # Clé d'API actuelle !
     weather_data = get(lat, lon, api_key)
     if weather_data:
          return weather_data
     else:
         print("Impossible de récupérer les prévisions météorologiques")
 
-
-
 if 'city' not in db.list_collection_names():
-    
     city_collection = db['city']
-
     with open('city.json', encoding='utf-8') as d:
         data = json.load(d)
-
     for city in data:
         lon = city['coord']['lon']
         lat = city['coord']['lat']
@@ -70,8 +65,6 @@ for document in cursor:
     humidity = rep['main']['humidity']
     pressure = rep['main']['pressure']
     wind_speed = rep['wind']['speed']
-
-    
     current_time = datetime.now()
 
     data_w = {
@@ -88,7 +81,10 @@ for document in cursor:
 
     data_weather = W_collection.insert_one(data_w)
 
-    print("Succès dans la collecte de données")
+    print(f"{name}Succès dans la collecte de données")
+    
+  
+    time.sleep(3)
 
 client.close()
 
