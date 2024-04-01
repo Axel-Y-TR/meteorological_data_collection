@@ -26,7 +26,7 @@ def get(lat, lon, api_key):
         return None
 
 def get_data(lat, lon):
-    api_key = "Openweather API KEY" #current data subscribtion !
+    api_key = "74fba207e3c6e53a8e1b95c9457311a8" #current data subscribtion !
     weather_data = get(lat, lon, api_key)
     if weather_data:
          return weather_data
@@ -55,7 +55,7 @@ if 'city' not in db.list_collection_names():
 if 'weather' not in db.list_collection_names():
     W_collection = db['weather']
 
-
+W_collection = db['weather']
 city_collection = db['city']
 cursor = city_collection.find()
 
@@ -91,3 +91,4 @@ for document in cursor:
     print("Succès dans la collecte de données")
 
 client.close()
+
